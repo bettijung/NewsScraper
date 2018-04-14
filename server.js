@@ -1,23 +1,23 @@
 // DEPENDENCIES * ================================================= *
-var express = require("express");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const method = require("method-override");
 
 // SCRAPING TOOLS * =============================================== *
-var axios = require("axios");
-var cheerio = require("cheerio");
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 // Require all Models
 const db = require("./models");
 
 // Define Port
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Initialize Express
-var app = express();
+const app = express();
 
 // CONFIGURE MIDDLEWARE * ========================================= *
 
@@ -48,27 +48,23 @@ app.get("/", (req, res) => {
     });
 });
 
-// A GET route for scraping the NYT website
+// A GET route for scraping the NYT Technology website
 app.get("/scrape", (req, res) => {
-  axios.get("https://www.nytimes.com/").then((response) => {
+  axios.get("https://www.nytimes.com/section/technology?action=click&pgtype=Homepage&region=TopBar&module=HPMiniNav&contentCollection=Tech&WT.nav=page").then((response) => {
     var $ = cheerio.load(response.data);
     $("article").each((i, element) => {
       var result = {};
 
-      // Save the text and href of every article as properties of the result object
-      result.title = $(this).children("h2").text();
-      result.summary = $(this).children(".summary").text();
-      result.link = $(this).children("h2").attr("href");
-
+        // Save the text and href of every article as properties of the result object
+        result.title = $(this).children("h2").text();
+        result.summary = $(this).children(".summary").text();
+        result.link = $(this).children("h2").attr("href");
+        console.log("full result: " + result);
     
       // Create a new Article using the result
       db.Article.create(result)
-        .then((dbArticle) => {
-          console.log(dbArticle);
-        })
-        .catch((err) => {
-          return res.json(err);
-        });
+        .then((dbArticle) => console.log(dbArticle))
+        .catch((err) => res.json(err));
     });
 
     // If scraped successfully, send a message to the client
@@ -77,15 +73,11 @@ app.get("/scrape", (req, res) => {
 });
 
 
-// GET Route for getting all Articles from the db
+// GET Route for grabbing all Articles from the db
 app.get("/articles", (req, res) => {
   db.Article.find({})
-    .then((dbArticle) => {
-      res.json(dbArticle);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+    .then((dbArticle) => res.json(dbArticle))
+    .catch((err) => res.json(err));
 });
 
 
@@ -105,14 +97,10 @@ app.get("/saved", (req, res) => {
 
 // GET Route for grabbing an article by its specific ID and adding a note
 app.get("/articles/:id", (req, res) => {
-    db.Article.findOne({ _id: req.params.id })
+    db.Article.findOne({_id: req.params.id})
     .populate("note")
-    .then((dbArticle) => {
-      res.json(dbArticle);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+    .then((dbArticle) => res.json(dbArticle))
+    .catch((err) => res.json(err));
 });
 
 
@@ -120,14 +108,10 @@ app.get("/articles/:id", (req, res) => {
 app.post("/articles/:id", (req, res) => {
   db.Note.create(req.body)
     .then((dbNote) => {
-      return db.Article.findOneAndUpdate({ "_id": req.params.id }, { note: dbNote._id }, { new: true });
+      return db.Article.findOneAndUpdate({"_id": req.params.id}, {note: dbNote._id }, {new: true});
     })
-    .then((dbArticle) => {
-      res.json(dbArticle);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+    .then((dbArticle) => res.json(dbArticle))
+    .catch((err) => res.json(err));
 });
 
 
@@ -168,7 +152,7 @@ app.post("/articles/save/:id", (req, res) => {
 });
 
 
-// POST Route to delete article
+// POST Route to delete an article
 app.post("/articles/delete/:id", (req, res) => {
     db.Article.findOneAndUpdate({"_id": req.params.id}, {"read": false})
     .exec((err, doc) => {
