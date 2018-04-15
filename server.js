@@ -20,9 +20,7 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-    useMongoClient: true
-});
+mongoose.connect(MONGODB_URI);
 
 // Initialize Express
 const app = express();
@@ -185,3 +183,5 @@ app.post("/articles/delete/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`This app is running on port: ${PORT}`);
 });
+
+

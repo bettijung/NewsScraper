@@ -19,5 +19,4 @@ Mongoose and Cheerio packages were used with MongoDB to scrape and store news in
 * Heroku
 * Express
 
-
 ### See package.json file -> dependencies for NPM packages
