@@ -1,7 +1,7 @@
 body { background-color: #F2F6D0 }
-  /* #jumbo-container {
-    background-image: ;
-  }     */
+  #jumbo-container {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7lqyntm5w74d8aT_ZUrhggZI8QcalTnOe53wbtER5FHd9VCYj");
+  }    
   /* #wrapper {
     width: 960px;
     margin-left: auto;
