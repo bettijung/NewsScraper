@@ -1,5 +1,3 @@
-import { truncate } from "fs";
-
 // REQUIRE MONGOOSE * ============================================= *
 const mongoose = require("mongoose");
 
