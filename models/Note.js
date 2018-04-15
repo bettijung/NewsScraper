@@ -1,3 +1,5 @@
+import { truncate } from "fs";
+
 // REQUIRE MONGOOSE * ============================================= *
 const mongoose = require("mongoose");
 
@@ -6,7 +8,14 @@ const Schema = mongoose.Schema;
 
 // CREATE NOTE SCHEMA OBJECT * ==================================== *
 const NoteSchema = new Schema({
-    body: String
+    article: {
+        type: Schema.Types.ObjectId,
+        ref: "Article"
+    },
+        body: {
+            type: String,
+            required: true
+        }
 });
 
 // CREATE MODEL FOR SCHEMA * ====================================== *

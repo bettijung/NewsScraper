@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>NYT Tech MongoDB Scraper</title>
+    <title>NYT Tech News Scraper</title>
 
     {{!-- STYLE LINKS * =========================================== * --}}
 	    {{!-- Bootstrap --}}
@@ -14,51 +14,55 @@
         <link rel="stylesheet" href="/public/assets/css/style.css" type="text/css" />
         {{!-- Google Fonts --}}
 	    <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Roboto" rel="stylesheet">
+        {{!-- Mobile Optimize --}}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
     {{!-- START MAIN BODY * ======================================= * --}}
-	<nav class="navbar navbar-expand-lg fixed-top">
-		<a class="navbar-brand" href="#">NYT Tech News Scraper</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-		 aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="/">NYT Tech News Scraper</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" 
+		 aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon mr-auto"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="/">Home
-					</a>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="/saved">Saved Articles</a>
 				</li>
-				<li class="nav-item">
-					<a class="btn btn-info" id="scrapeBtn" role="button">Scrape new articles</a>
+				<li class="nav-item active">
+					<button type="button" class="btn btn-info" id="scrape">Scrape new articles</button>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="jumbotron jumbotron-fluid">
-		<div class="container jumbo-container">
-			<h1 class="display-4">Scrape the Best in Travel</h1>
+		<div class="container text-center" id="jumbo-container">
+			<h1 class="display-4">Scrape the Latest in Tech</h1>
+            <p class="lead">Navigate through the latest technology news &amp; articles from the New York Times.</p>
 		</div>
 	</div>
 
+	{{{ body }}}
 
-	<div class="container">
-		{{{ body }}}
-	</div>
 
     {{!-- SCRIPT LINKS * ========================================== * --}}
-    {{!-- jQuerry --}}
+        {{!-- jQuery Library --}}
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	    crossorigin="anonymous"></script>
-	    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        {{!-- Compiled and Minified jQuery --}}
+	    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         {{!-- Bootstrap --}}
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	    crossorigin="anonymous"></script>
+        {{!-- Bootstrap Popper JS --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	    crossorigin="anonymous"></script>
 	    {{!-- Personal JS --}}
         <script src="/public/assets/js/app.js"></script>

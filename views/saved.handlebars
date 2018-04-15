@@ -1,0 +1,33 @@
+{{!-- SAVED ARTICLES HANDLEBARS * ================================= * --}}
+<div class="container">
+    <div class="col-md-12">
+        <div class="card-columns">
+            {{#if articles}}
+                {{#each articles}}
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src={{image}} alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{summary}}</p>
+                            <a class="btn btn-primary" target="_blank" href={{link}}>Go To Article</a>
+                            <button class="btn btn-dark mx-auto delete" type="button" data-id={{this._id}}>Delete</button>
+                            <button class="btn btn-secondary mx-auto add-note" type="button" data-toggle="modal" data-target="#noteModal{{this._id}}" data-id={{this._id}}>Notes</button>
+                        </div>
+                    </div>               
+                {{/each}}
+            {{else}}
+                <div class="card">
+                    <div class="card-header">Dive in!
+                        <div class="card-body">
+                            <h5 class="card-title">You haven't saved any articles yet.</h5>
+                            <a class="btn btn-info" href="/">Go Somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+{{#each articles}}
+    {{> notes}}
