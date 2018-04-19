@@ -10,13 +10,11 @@
             </div>
             <div class="modal-body">
                 {{#if note}}
-                    {{#each notes}}
-                        <div class="card">
-                            <div class="card-body">
-                            {{note.body}}                
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                        {{note.body}}                
                         </div>
-                    {{/each}}    
+                    </div>   
                 {{else}}   
                 <div class="card">
                     <div class="card-body">

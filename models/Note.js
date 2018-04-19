@@ -6,14 +6,7 @@ const Schema = mongoose.Schema;
 
 // CREATE NOTE SCHEMA OBJECT * ==================================== *
 const NoteSchema = new Schema({
-    article: {
-        type: Schema.Types.ObjectId,
-        ref: "Article"
-    },
-        body: {
-            type: String,
-            required: true
-        }
+    body: String
 });
 
 // CREATE MODEL FOR SCHEMA * ====================================== *

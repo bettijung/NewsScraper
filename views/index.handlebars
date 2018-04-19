@@ -1,18 +1,18 @@
  {{!-- WEB PAGE HANDLEBARS * ====================================== * --}}
- <div class="container">
-    <div class="col-md-12">
-        <div class="card-columns">
-            {{#each articles}}
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src={{image}} alt="Card image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{title}}</h5>
-                        <p class="card-text">{{summary}}</p>
-                        <a class="btn btn-info" target="_blank" href={{link}}>Go To Article</a>
-                        <button class="btn btn-info mx-auto save" type="button" data-id={{this._id}}>Save Article</button>
-                    </div>
+
+<div class="col-md-12">
+    <div class="card-columns">
+        {{#each articles}}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top mx-auto" src={{imgLink}}>
+                <div class="card-body">
+                    <h5 class="card-header">{{title}}</h5>
+                    <p class="card-text">{{summary}}</p>
+                    <a class="btn btn-info read-btn mx-auto card-button" target="_blank" href={{link}}>Go To Article</a>
+                    <button class="btn btn-info mx-auto save card-button" type="button" data-id={{this._id}}>Save Article</button>
                 </div>
-            {{/each}}    
-        </div>
+            </div>
+        {{/each}}    
     </div>
 </div>
+

@@ -10,10 +10,10 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  image: {
-    type: String,
-    required: false
-  },
+  // image: {
+  //   type: String,
+  //   required: false
+  // },
   summary: {
       type: String,
       required: true
@@ -22,14 +22,15 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  saved: {
+  imgLink: String,
+  read: {
       type: Boolean,
       default: false
   },
-  notes: [{
+  note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
-  }]
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method

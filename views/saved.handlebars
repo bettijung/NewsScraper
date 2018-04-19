@@ -2,34 +2,28 @@
 <div class="container">
     <div class="col-md-12">
         <div class="card-columns">
-            {{#if articles}}
-                {{#each articles}}
+            {{#each articles}}
+                 {{#if read}}
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src={{image}} alt="Card image">
+                        <img class="card-image-top mx-auto" src="{{imgLink}}">
                         <div class="card-body">
                             <h5 class="card-title">{{title}}</h5>
                             <p class="card-text">{{summary}}</p>
-                            <a class="btn btn-primary" target="_blank" href={{link}}>Go To Article</a>
+                            <a class="btn btn-info read-btn mx-auto" target="_blank" href={{link}}>Go To Article</a>
                             <button class="btn btn-dark mx-auto delete" type="button" data-id={{this._id}}>Delete</button>
                             <button class="btn btn-secondary mx-auto add-note" type="button" data-toggle="modal" data-target="#noteModal{{this._id}}" data-id={{this._id}}>Notes</button>
                         </div>
-                    </div>               
-                {{/each}}
+                    </div>    
             {{else}}
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-body">
-                            <h5 class="card-title">You haven't saved any articles yet.</h5>
-                            <a class="btn btn-info" href="/">Begin Scraping Articles</a>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="card-title">You have no saved any articles yet.</h1>
+                    <a class="btn btn-info" href="/">Begin Scraping Articles</a>
             {{/if}}
+            {{/each}}
         </div>
     </div>
 </div>
 
 {{!-- Clicked Notes Modal --}}
 {{#each articles}}
-    {{> notes}}
+    {{> notes-modal}}
 {{/each}}

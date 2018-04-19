@@ -13,43 +13,54 @@
         <link rel="stylesheet" href="/assets/css/style.css">
         {{!-- Google Fonts --}}
 	    <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Roboto" rel="stylesheet">
+		{{!-- Favicon --}}
+		<link rel="icon" href="https://graptechpedia.com/wp-content/uploads/graptechpedia-favicon.pngç" type="image/x-icon">
         {{!-- Mobile Optimize --}}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
     {{!-- START MAIN BODY * ======================================= * --}}
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<a class="navbar-brand" href="/">NYT Tech News Scraper</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" 
-		 aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon mr-auto"></span>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<a class="navbar-brand" href="#">NYT Tech News Scraper</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="nav navbar mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="/">Home</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home
+					</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="/saved">Saved Articles</a>
 				</li>
-				<li class="nav-item active">
-					<button type="button" class="btn btn-info" id="scrape">Scrape new articles</button>
+				<li class="nav-item">
+					<a class="btn btn-info" id="scrapeBtn" role="button">Scrape new articles</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container text-center" id="jumbo-container">
-			<h1 class="display-4">The Latest in Tech News</h1>
-            <p class="lead">Navigate through the latest technology news &amp; articles from the New York Times</p>
+	<div class="main-body">
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container text-center" id="jumbo-container">
+				<h1 class="display-4">The Latest in Tech News</h1>
+				<p class="lead">Navigate through the latest technology news &amp; articles from the New York Times</p>
+			</div>
+		</div>
+
+
+		<div class="container cards">
+			{{{ body }}}
 		</div>
 	</div>
 
 
-	{{{ body }}}
+	
+	
 
 
     {{!-- SCRIPT LINKS * ========================================== * --}}

@@ -1,21 +1,21 @@
 // APP JS * ======================================================= * 
 
 // SCRAPE BUTTON * ================================================ *
-$("#scrape").on("click", () => {
+$("#scrapeBtn").on("click", () => {
     $.ajax({
         method: "GET",
         url: "/scrape"
     }).done((data) => {
         console.log(data);
-        window.location = "/";
+        window.location = "/"
     });
 });
 
 // Set clicked Nav option to 'active'
-$(".navbar-nav li").click( () => {
-    $(".navbar-nav li").removeClass("active");
-    $(this).addClass("active");
-});
+// $(".navbar-nav li").click( () => {
+//     $(".navbar-nav li").removeClass("active");
+//     $(this).addClass("active");
+// });
 
 // SAVE ARTICLE BUTTON * ========================================== *
 $(".save").on("click", () => {
@@ -24,8 +24,7 @@ $(".save").on("click", () => {
         method: "POST",
         url: "/articles/save/" + thisId
     }).done((data) => {
-        console.log(data);
-        window.location = "/";
+        window.location = "/"
     });
 });
 
@@ -37,8 +36,7 @@ $(".delete").on("click", () => {
         method: "POST",
         url: "/articles/delete/" + thisId
     }).done((data) => {
-        console.log(data);
-        window.location = "/saved";
+        window.location = "/saved"
     });
 });
 
@@ -69,8 +67,7 @@ $(".save-note").on("click", () => {
     }).then((data) => {
         console.log(data);
         $("#noteArea").val(" ");
-        $("#noteModal").modal("hide");
-        window.location = "/saved";
+        window.location = "/saved"
     });
 });
 

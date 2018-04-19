@@ -1,33 +1,122 @@
-body { background-color: #F2F6D0 }
-  #jumbo-container {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7lqyntm5w74d8aT_ZUrhggZI8QcalTnOe53wbtER5FHd9VCYj");
-  }    
-  #wrapper {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 5%;
-  }
-  #articles {
-    display: inline-block;
-    overflow: auto;
-    width: 60%;
-    height: 700px;
-  }
-  #notes {
-    float: right;
-    width: 30%;
-  }
-  textarea, input {
-    display: block;
-    width: 100%;
-    background-color: #FCF5C7;
-  }
-  input {
-    height: 36px;
-    font-size: 24px;
-  }
-  textarea {
-    height: 200px;
-    font-size: 18px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+
+}
+.main-body {
+  background: url(https://dreamix.eu/blog/wp-content/uploads/2016/04/2015-01-13_01-42-57pm_technews.jpg) no-repeat; 
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #e48d0b;
+  height: 75px;
+}
+
+.nav-link, .navbar-brand {
+  color: black;
+}
+
+.navbar-brand {
+  font-family: 'Slabo 27px', serif;
+  font-size: 2.0rem;
+  padding: 10px;
+}
+
+.nav-link {
+  padding: 24px;
+  margin-left: 15px;
+}
+
+.navbar-collapse {
+  background-color: #e48d0b;
+}
+
+.btn-info {
+  margin: 15px;
+  background-color: #2ab4d6;
+  border-color: #2ab4d6;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  background: url( ..) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 50px;
+}
+
+.jumbotron-fluid {
+  height: 250px;
+  margin: 0;
+}
+
+.container {
+ text-align: center;
+ margin-top: 5%;
+}
+
+.cards {
+  margin: 0 auto;
+}
+
+.display-4 {
+  color: rgb(255, 255, 255);
+  font-family: 'Slabo 27px', serif;
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+/* CARDS */
+.card {
+  margin: 20px;
+}
+
+.card-header {
+  background-color: #2ab4d6;
+  font-family: 'Slabo 27px', serif;
+}
+
+.mx-auto {
+  width: 65%;
+  display: block;
+}
+
+.btn-secondary {
+  margin: 15px;
+}
+.read-btn, .btn-dark, .btn-secondary {
+  width: 65%;
+  display: block;
+}
+.card-button {
+  margin: 15px;
+  background-color: #e48d0b;
+  border-color: #e48d0b;
+}
+
+/* MODAL */
+.modal-title {
+  font-family: 'Slabo 27px', serif;
+}
+
+.modal-header {
+  background-color: #2ab4d6;
+}
+
+h5 {
+  font-family: 'Slabo 27px', serif;
+}
+
+label {
+  font-family: 'Slabo 27px', serif;
+
+}
