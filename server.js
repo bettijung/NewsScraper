@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 
 // CONNECT TO MONGODB * =========================================== *
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
-
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
