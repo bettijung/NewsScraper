@@ -50,6 +50,12 @@
   background-size: cover;
   padding-top: 50px;
 }
+#jumbo-container {
+  background-color: white;
+  opacity: 0.7;
+  width: 1000px;
+  height: 120px;
+}
 
 .jumbotron-fluid {
   height: 250px;
